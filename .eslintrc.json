@@ -1,0 +1,61 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended",
+    "prettier",
+    "prettier/flowtype",
+    "prettier/react",
+    "plugin:jsx-control-statements/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true,
+    "mocha": true,
+    "jasmine": true
+  },
+  "rules": {
+    "max-len": [1, 100, 2],
+    "arrow-parens": ["error", "as-needed"],
+    "arrow-body-style": ["warn", "as-needed"],
+    "no-plusplus": "off",
+    "class-methods-use-this": "off",
+    "semi": ["error", "never"],
+    "radix": 0,
+    "comma-dangle": "off",
+    "no-underscore-dangle": "off",
+    "no-restricted-syntax": ["off", "ForOfStatement"],
+    "no-bitwise": ["error", { "allow": ["~"] }],
+    "no-continue": "warn",
+    "import/extensions": "warn",
+    "import/no-amd": "off",
+    "import/no-unresolved": ["error", {"ignore": ["js", "app", "urls"]}],
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": [
+        "**/__tests__/**.js",
+        "**/webpack.config.js",
+        "webpack.config.*.js"
+      ],
+      "optionalDependencies": false
+    }],
+    "react/require-default-props": ["error", { "forbidDefaultForRequired": true}],
+    "react/forbid-prop-types": "off",
+    "react/jsx-no-undef": ["error", { "allowGlobals": true }]
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "plugins": [
+    "react",
+    "flowtype",
+    "jsx-control-statements"
+  ]
+}

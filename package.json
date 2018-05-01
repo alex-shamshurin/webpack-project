@@ -1,0 +1,50 @@
+{
+  "name": "webpack-project",
+  "version": "0.0.2",
+  "description": "Webpack Template",
+  "main": "index.js",
+  "license": "MIT",
+  "browserslist": [">1%", "last 4 versions", "Firefox ESR", "not ie < 9"],
+  "scripts": {
+    "dev": "babel-node tools/dev.js",
+    "build": "webpack --mode=production"
+  },
+  "serve": {
+    "dev": {
+      "publicPath": "/public/"
+    }
+  },
+
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/node": "^7.0.0-beta.46",
+    "@babel/plugin-transform-react-constant-elements": "^7.0.0-beta.46",
+    "@babel/plugin-transform-react-inline-elements": "^7.0.0-beta.46",
+    "@babel/plugin-proposal-decorators": "^7.0.0-beta.46",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
+    "@babel/preset-env": "^7.0.0-beta.46",
+    "@babel/preset-flow": "^7.0.0-beta.46",
+    "@babel/preset-react": "^7.0.0-beta.46",
+    "@babel/preset-stage-2": "^7.0.0-beta.46",
+    "app-root-dir": "^1.0.2",
+    "babel-core": "^7.0.0-0",
+    "babel-loader": "^8.0.0-beta.2",
+    "cross-env": "^5.1.4",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "node-notifier": "^5.2.1",
+    "npm-run-all": "^4.1.2",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.1.2",
+    "webpack-serve": "^0.3.2",
+    "yarn": "^1.6.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-hot-loader": "^4.1.2",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
+  }
+}
