@@ -11,8 +11,10 @@
     "not ie < 9"
   ],
   "scripts": {
-    "dev": "babel-node tools/dev.js",
-    "build": "webpack --mode=production"
+    "clean": "babel-node tools/clean.js",
+    "build": "babel-node tools/build.js",
+    "dev": "yarn run clean && babel-node tools/dev.js",
+    "start": "yarn run clean && yarn run build && babel-node tools/startServer.js"
   },
   "serve": {
     "dev": {
@@ -37,9 +39,11 @@
     "cross-env": "^5.1.4",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
+    "image-webpack-loader": "^4.2.0",
     "node-notifier": "^5.2.1",
     "node-sass": "^4.9.0",
     "npm-run-all": "^4.1.2",
+    "null-loader": "^0.1.1",
     "postcss": "^6.0.22",
     "postcss-loader": "^2.1.4",
     "prettier": "^1.11.1",
@@ -50,7 +54,10 @@
     "svg-url-loader": "^2.3.2",
     "url-loader": "^1.0.1",
     "webpack": "^4.6.0",
+    "webpack-assets-manifest": "^3.0.1",
+    "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^2.1.2",
+    "webpack-node-externals": "^1.7.2",
     "webpack-serve": "^0.3.2",
     "yarn": "^1.6.0"
   },

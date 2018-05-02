@@ -10,12 +10,12 @@ const promisify = f => cb =>
     f(resolve, reject, cb);
   });
 
+const isServerConfig = true;
+const isClientConfig = false;
+
 const serve = () => {
   const webpackConfigFactory = require('./webpack.configFactory');
-  const webpackConfig = webpackConfigFactory('development');
-  console.log('webpack config: ', webpackConfig);
-  // const compiler = webpack(webpackConfig)
-  // console.log('compiler', compiler)
+  const webpackConfig = webpackConfigFactory('development', isClientConfig);
   return webpackServe({
     config: webpackConfig,
     content: pathResolve(appRootDir.get(), 'public')
@@ -45,7 +45,7 @@ serve().then(initialServer => {
           devServer = newServer;
         })
         .catch(e => {
-          console.log('Error in promise', e);
+          console.log('Error in restarting', e);
         });
     });
   });
