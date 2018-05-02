@@ -162,6 +162,7 @@ const configFactory = (mode, isServerConfig) => {
               options: {
                 name: staticAssetName
               }
+              // Ужатие графики, если надо
               // loader: 'image-webpack-loader',
               // options: {
               //   name: staticAssetName,
@@ -207,6 +208,7 @@ const configFactory = (mode, isServerConfig) => {
       ]
     },
 
+    // не игноририть ошибки
     bail: !isDebug,
     cache: isDebug,
 
@@ -223,7 +225,6 @@ const configFactory = (mode, isServerConfig) => {
       version: isVerbose
     },
 
-    // https://webpack.js.org/configuration/devtool/#devtool
     devtool: isDebug ? 'cheap-module-inline-source-map' : 'source-map',
     performance: {
       hints: false

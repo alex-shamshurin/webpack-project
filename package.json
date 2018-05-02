@@ -1,20 +1,24 @@
 {
   "name": "webpack-project",
-  "version": "0.0.2",
+  "author": "Alexander Shamshurin",
+  "license": "MIT",
+  "version": "0.0.3",
   "description": "Webpack Template",
   "main": "index.js",
   "license": "MIT",
   "browserslist": [
     ">1%",
-    "last 4 versions",
+    "last 2 versions",
     "Firefox ESR",
-    "not ie < 9"
+    "not ie < 11"
   ],
   "scripts": {
-    "clean": "babel-node tools/clean.js",
-    "build": "babel-node tools/build.js",
-    "dev": "yarn run clean && babel-node tools/dev.js",
-    "start": "yarn run clean && yarn run build && babel-node tools/startServer.js"
+    "babel": "babel --ignore node_modules,public",
+    "babel-node": "babel-node --ignore node_modules,public",
+    "clean": "yarn run babel-node tools/clean.js",
+    "build": "cross-env NODE_ENV=production yarn run babel-node tools/build.js",
+    "dev": "cross-env NODE_ENV=development yarn run clean && yarn run babel-node tools/dev.js",
+    "start": "cross-env NODE_ENV=production yarn run clean && yarn run build && yarn run babel-node tools/startServer.js"
   },
   "serve": {
     "dev": {
