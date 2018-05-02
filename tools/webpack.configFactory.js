@@ -14,9 +14,14 @@ const BUILD_DIR = pathResolve(ROOT_DIR, 'build');
 const reScript = /\.(js|jsx|mjs)$/;
 const reStyle = /\.(css|less|styl|scss|sass|sss)$/;
 const reImage = /\.(bmp|gif|jpg|jpeg|png|svg)$/;
-//
+
+// cssnano.co
 const minimizeCssOptions = {
-  discardComments: { removeAll: true }
+  discardComments: { removeAll: true },
+  zindex: false,
+  autoprefixer: false,
+  reduceIdents: false,
+  preset: 'default',
 };
 
 const configFactory = (mode, isServerConfig) => {
